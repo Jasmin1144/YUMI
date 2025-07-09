@@ -16,4 +16,5 @@
     <color name="notebook_paper">#FFFFF0</color>
     <color name="notebook_lines">#E0E0E0</color>
     <color name="notebook_spiral">#C0C0C0</color>
+    <color name="white">#FFFFFFFF</color>
 </resources>

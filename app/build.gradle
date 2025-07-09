@@ -1,85 +1,104 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.compose)
-    id("kotlin-kapt")
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
+    // REMOVED: Version from here, it's inherited from the Kotlin Android plugin
+    id("org.jetbrains.kotlin.plugin.compose")
+    id("com.google.dagger.hilt.android")
+    // Ensure KSP version is defined in the project-level build.gradle.kts
+    id("com.google.devtools.ksp")
 }
 
 android {
-    namespace 'com.example.yumi'
-    compileSdk 34 // Reverted to user-provided version
+    namespace = "com.example.yumi" // As per your original file
+    compileSdk = 34 // Your original file used 34, sticking to that unless you have a reason to change
 
     defaultConfig {
-        applicationId "com.example.yumi"
-        minSdk 24
-        targetSdk 34 // Reverted to user-provided version
-        versionCode 1
-        versionName "1.0"
+        applicationId = "com.example.yumi"
+        minSdk = 24
+        targetSdk = 34 // Match compileSdk
+        versionCode = 1
+        versionName = "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary = true
+        }
     }
 
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            isMinifyEnabled = false // In kts, it's isMinifyEnabled
+            proguardFiles(
+                    getDefaultProguardFile("proguard-android-optimize.txt"),
+                    "proguard-rules.pro"
+            )
         }
     }
+
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
-        jvmTarget = '11'
+        jvmTarget = "1.8"
     }
+
     buildFeatures {
-        viewBinding true // Added as per user spec
-        // compose true // Commented out as current app is View-based
+        compose = true
+        // viewBinding = true // You had this, uncomment if still needed
+    }
+
+    composeOptions {
+        // Updated to be compatible with Kotlin 1.9.0 (assuming that's your Kotlin version)
+        // Adjust if your project-level Kotlin version is different
+        kotlinCompilerExtensionVersion = "1.5.0"
+    }
+
+    // Packaging options might be needed if you encounter issues with duplicate files
+    // from different libraries, especially with Compose and Material 3
+    packagingOptions {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
     }
 }
 
 dependencies {
+    implementation("androidx.core:core-ktx:1.13.1")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.1") // Common lifecycle ktx
+    implementation("androidx.activity:activity-compose:1.9.0") // For Composable activities
 
-    implementation libs.androidx.core.ktx
-    implementation libs.androidx.lifecycle.runtime.ktx
-    implementation libs.androidx.activity.compose
-    implementation platform(libs.androidx.compose.bom)
-    implementation libs.androidx.ui
-    implementation libs.androidx.ui.graphics
-    implementation libs.androidx.ui.tooling.preview
-    implementation libs.androidx.material3
-    testImplementation libs.junit
-    androidTestImplementation libs.androidx.junit
-    androidTestImplementation libs.androidx.espresso.core
-    androidTestImplementation platform(libs.androidx.compose.bom)
-    androidTestImplementation libs.androidx.ui.test.junit4
-    debugImplementation libs.androidx.ui.tooling
-    debugImplementation libs.androidx.ui.test.manifest
+    // Jetpack Compose
+    val composeBom = platform("androidx.compose:compose-bom:2024.05.00")
+    implementation(composeBom)
+    androidTestImplementation(composeBom) // Also for tests
 
-    implementation 'androidx.core:core-ktx:1.12.0'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.11.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation("androidx.compose.ui:ui")
+    implementation("androidx.compose.ui:ui-graphics")
+    implementation("androidx.compose.ui:ui-tooling-preview")
+    debugImplementation("androidx.compose.ui:ui-tooling") // Tooling for debug builds
+    implementation("androidx.compose.material3:material3")
 
-    // ViewPager2 for swipeable pages
-    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    // Hilt for Dependency Injection
+    implementation("com.google.dagger:hilt-android:2.51.1") // Use the latest stable version
+    ksp("com.google.dagger:hilt-compiler:2.51.1")     // Use ksp for Hilt compiler
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0") // For Hilt and Compose Navigation
 
-    // Lottie for animations
-    implementation 'com.airbnb.android:lottie:6.3.0'
+    // Room for Database (Example, adjust versions as needed)
+    val roomVersion = "2.6.1"
+    implementation("androidx.room:room-runtime:$roomVersion")
+    implementation("androidx.room:room-ktx:$roomVersion")
+    ksp("androidx.room:room-compiler:$roomVersion") // Use KSP for Room as well
 
-    // Glide for image loading
-    implementation 'com.github.bumptech.glide:glide:4.16.0'
+    // Other dependencies from your original file (ensure they are still needed)
+    implementation("androidx.appcompat:appcompat:1.7.0") // If you still use AppCompat Views/Themes
+    implementation("com.google.android.material:material:1.12.0") // For Material Design Components (Views)
 
-    // Room for database
-    implementation 'androidx.room:room-runtime:2.6.1'
-    implementation 'androidx.room:room-ktx:2.6.1'
-    kapt 'androidx.room:room-compiler:2.6.1'
-
-    // ViewModel and LiveData
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.7.0'
-    implementation 'androidx.fragment:fragment-ktx:1.6.2' // For by viewModels()
-
-    // Circle ImageView
-    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    // Testing
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.2.1")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
+    debugImplementation("androidx.compose.ui:ui-test-manifest")
 }
