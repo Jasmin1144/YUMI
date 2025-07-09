@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="480dp"
+    android:viewportWidth="48"
+    android:viewportHeight="480">
+
+    <!-- Repeating spiral holes -->
+    <path
+        android:fillColor="#CCCCCC"
+        android:pathData="M24,20 m-6,0 a6,6 0 1,1 12,0 a6,6 0 1,1 -12,0" />
+    <path
+        android:fillColor="#CCCCCC"
+        android:pathData="M24,50 m-6,0 a6,6 0 1,1 12,0 a6,6 0 1,1 -12,0" />
+    <path
+        android:fillColor="#CCCCCC"
+        android:pathData="M24,80 m-6,0 a6,6 0 1,1 12,0 a6,6 0 1,1 -12,0" />
+    <path
+        android:fillColor="#CCCCCC"
+        android:pathData="M24,110 m-6,0 a6,6 0 1,1 12,0 a6,6 0 1,1 -12,0" />
+    <path
+        android:fillColor="#CCCCCC"
+        android:pathData="M24,140 m-6,0 a6,6 0 1,1 12,0 a6,6 0 1,1 -12,0" />
+    <path
+        android:fillColor="#CCCCCC"
+        android:pathData="M24,170 m-6,0 a6,6 0 1,1 12,0 a6,6 0 1,1 -12,0" />
+    <path
+        android:fillColor="#CCCCCC"
+        android:pathData="M24,200 m-6,0 a6,6 0 1,1 12,0 a6,6 0 1,1 -12,0" />
+    <path
+        android:fillColor="#CCCCCC"
+        android:pathData="M24,230 m-6,0 a6,6 0 1,1 12,0 a6,6 0 1,1 -12,0" />
+    <path
+        android:fillColor="#CCCCCC"
+        android:pathData="M24,260 m-6,0 a6,6 0 1,1 12,0 a6,6 0 1,1 -12,0" />
+    <path
+        android:fillColor="#CCCCCC"
+        android:pathData="M24,290 m-6,0 a6,6 0 1,1 12,0 a6,6 0 1,1 -12,0" />
+    <path
+        android:fillColor="#CCCCCC"
+        android:pathData="M24,320 m-6,0 a6,6 0 1,1 12,0 a6,6 0 1,1 -12,0" />
+    <path
+        android:fillColor="#CCCCCC"
+        android:pathData="M24,350 m-6,0 a6,6 0 1,1 12,0 a6,6 0 1,1 -12,0" />
+    <path
+        android:fillColor="#CCCCCC"
+        android:pathData="M24,380 m-6,0 a6,6 0 1,1 12,0 a6,6 0 1,1 -12,0" />
+    <path
+        android:fillColor="#CCCCCC"
+        android:pathData="M24,410 m-6,0 a6,6 0 1,1 12,0 a6,6 0 1,1 -12,0" />
+    <path
+        android:fillColor="#CCCCCC"
+        android:pathData="M24,440 m-6,0 a6,6 0 1,1 12,0 a6,6 0 1,1 -12,0" />
+
+    <!-- Inner shadow effect for each hole -->
+    <path
+        android:fillColor="#AAAAAA"
+        android:pathData="M24,20 m-6,0 a6,6 0 0,1 6,-6 a6,6 0 0,0 -6,6 z" />
+</vector>

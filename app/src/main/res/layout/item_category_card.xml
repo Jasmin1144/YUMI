@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="0dp"
+    android:stateListAnimator="@animator/card_state_animator">
+
+    <com.example.yumi.views.ShimmerFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Living Background -->
+        <com.example.yumi.views.CategoryLiveBackground
+            android:id="@+id/liveBackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <!-- Glass Morphism Effect -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/glass_morphism_background"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp">
+
+            <!-- Animated Icon -->
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/categoryIconAnimation"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"/>
+
+            <!-- Progress Ring -->
+            <com.example.yumi.views.CircularProgressView
+                android:id="@+id/progressRing"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignParentEnd="true"
+                app:progressColor="@color/ghibli_grass_green"
+                app:progressBackgroundColor="@color/ghibli_cloud_white"/>
+
+            <TextView
+                android:id="@+id/progressText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="25dp"
+                android:text="0%"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:fontFamily="@font/kalam_bold"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@id/categoryIconAnimation"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:id="@+id/categoryName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Travel"
+                    android:textSize="28sp"
+                    android:fontFamily="@font/kalam_bold"
+                    android:textColor="@color/white"
+                    android:shadowColor="@color/ghibli_shadow"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:shadowRadius="4"/>
+
+                <TextView
+                    android:id="@+id/itemCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5 magical wishes"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/kalam_regular"
+                    android:textColor="@color/white"
+                    android:alpha="0.9"/>
+
+                <!-- Mini Preview Images -->
+                <LinearLayout
+                    android:id="@+id/previewContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/preview1"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginEnd="-8dp"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="@color/white"/>
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/preview2"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginEnd="-8dp"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="@color/white"/>
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/preview3"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="@color/white"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <!-- Sparkle Effect Overlay -->
+        <com.example.yumi.views.SparkleView
+            android:id="@+id/sparkleOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </com.example.yumi.views.ShimmerFrameLayout>
+
+</com.google.android.material.card.MaterialCardView>

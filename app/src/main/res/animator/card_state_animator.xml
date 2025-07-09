@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Placeholder for card_state_animator.xml -->
+<!-- Defines animations for view states like pressed, enabled, etc. -->
+<!-- Example:
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <objectAnimator
+            android:duration="@android:integer/config_shortAnimTime"
+            android:propertyName="translationZ"
+            android:valueTo="8dp"
+            android:valueType="floatType"/>
+    </item>
+    <item>
+        <objectAnimator
+            android:duration="@android:integer/config_shortAnimTime"
+            android:propertyName="translationZ"
+            android:valueTo="0dp"
+            android:valueType="floatType"/>
+    </item>
+</selector>
+-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Default state -->
+    <item>
+        <objectAnimator
+            android:duration="100"
+            android:propertyName="translationZ"
+            android:valueTo="0dp"
+            android:valueType="floatType"/>
+    </item>
+</selector>

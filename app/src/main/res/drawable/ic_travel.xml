@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Whimsical hot air balloon -->
+    <path
+        android:fillColor="#87CEEB"
+        android:pathData="M24,8 C18,8 13,13 13,20 C13,28 24,36 24,36 C24,36 35,28 35,20 C35,13 30,8 24,8 Z" />
+
+    <!-- Balloon highlights -->
+    <path
+        android:fillColor="#B0E0E6"
+        android:pathData="M20,15 Q16,18 18,22 Q20,23 22,20 Q23,17 21,15 Q20,14 20,15 Z" />
+
+    <!-- Basket -->
+    <path
+        android:fillColor="#8B4513"
+        android:strokeColor="#654321"
+        android:strokeWidth="0.5"
+        android:pathData="M20,34 L28,34 L27,38 L21,38 Z" />
+
+    <!-- Ropes -->
+    <path
+        android:strokeColor="#A0522D"
+        android:strokeWidth="0.5"
+        android:pathData="M22,30 L21,34" />
+    <path
+        android:strokeColor="#A0522D"
+        android:strokeWidth="0.5"
+        android:pathData="M26,30 L27,34" />
+
+    <!-- Clouds -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="0.7"
+        android:pathData="M8,20 Q6,18 8,16 Q10,15 12,16 Q14,17 12,19 Q10,20 8,20 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="0.7"
+        android:pathData="M36,18 Q34,16 36,14 Q38,13 40,14 Q42,15 40,17 Q38,18 36,18 Z" />
+</vector>

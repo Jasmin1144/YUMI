@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="80dp"
+    android:height="80dp"
+    android:viewportWidth="80"
+    android:viewportHeight="80">
+
+    <!-- Ghibli-style decorative leaves -->
+    <path
+        android:fillColor="#90EE90"
+        android:strokeColor="#71B280"
+        android:strokeWidth="0.5"
+        android:pathData="M20,15 Q10,25 15,35 Q20,40 25,35 Q30,30 25,20 Q22,15 20,15 Z" />
+
+    <path
+        android:fillColor="#98FB98"
+        android:strokeColor="#71B280"
+        android:strokeWidth="0.5"
+        android:pathData="M50,10 Q40,20 45,30 Q50,35 55,30 Q60,25 55,15 Q52,10 50,10 Z" />
+
+    <path
+        android:fillColor="#90EE90"
+        android:strokeColor="#71B280"
+        android:strokeWidth="0.5"
+        android:pathData="M35,40 Q25,50 30,60 Q35,65 40,60 Q45,55 40,45 Q37,40 35,40 Z" />
+
+    <path
+        android:fillColor="#8FBC8F"
+        android:strokeColor="#71B280"
+        android:strokeWidth="0.5"
+        android:pathData="M60,35 Q50,45 55,55 Q60,60 65,55 Q70,50 65,40 Q62,35 60,35 Z" />
+
+    <!-- Leaf veins -->
+    <path
+        android:strokeColor="#71B280"
+        android:strokeWidth="0.3"
+        android:pathData="M22,20 L22,30" />
+    <path
+        android:strokeColor="#71B280"
+        android:strokeWidth="0.3"
+        android:pathData="M52,15 L52,25" />
+    <path
+        android:strokeColor="#71B280"
+        android:strokeWidth="0.3"
+        android:pathData="M37,45 L37,55" />
+    <path
+        android:strokeColor="#71B280"
+        android:strokeWidth="0.3"
+        android:pathData="M62,40 L62,50" />
+</vector>

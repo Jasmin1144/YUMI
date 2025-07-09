@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Notebook shadow -->
+    <item android:left="5dp">
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="0"
+                android:startColor="#40000000"
+                android:endColor="#00000000"
+                android:type="linear"/>
+        </shape>
+    </item>
+
+    <!-- Notebook edge -->
+    <item android:right="10dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/notebook_paper"/>
+            <corners
+                android:topLeftRadius="8dp"
+                android:bottomLeftRadius="8dp"/>
+        </shape>
+    </item>
+
+    <!-- Spiral binding -->
+    <item android:right="50dp">
+        <bitmap
+            android:src="@drawable/spiral_holes_pattern"
+            android:tileMode="repeat"
+            android:gravity="left|center_vertical"/>
+    </item>
+
+    <!-- Page lines hint -->
+    <item
+        android:left="20dp"
+        android:right="20dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#00000000"/>
+            <stroke
+                android:width="1dp"
+                android:color="@color/notebook_lines"
+                android:dashWidth="100dp"
+                android:dashGap="30dp"/>
+        </shape>
+    </item>
+</layer-list>

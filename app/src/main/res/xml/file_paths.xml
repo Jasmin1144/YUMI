@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Define paths that FileProvider can share -->
+
+    <!-- For photos taken with the camera -->
+    <external-files-path
+        name="my_images"
+        path="Pictures" />
+
+    <!-- Example for sharing cache files if needed -->
+    <!-- <cache-path name="my_cache" path="." /> -->
+
+    <!-- Example for sharing files in app-specific external storage directory -->
+    <!-- <external-path name="my_files" path="." /> -->
+
+    <!-- If you store files in specific subdirectories of getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+         you can specify them like this:
+    <external-files-path name="my_wishes_images" path="Wishes/Images" />
+    -->
+</paths>

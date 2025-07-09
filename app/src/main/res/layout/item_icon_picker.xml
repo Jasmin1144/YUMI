@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="64dp"
+    android:layout_height="64dp"
+    android:layout_margin="8dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="?attr/selectableItemBackgroundBorderless"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/iconView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+        tools:src="@drawable/ic_travel"
+        app:tint="?attr/colorControlNormal"/>
+
+    <ImageView
+        android:id="@+id/checkMarkIcon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_gravity="top|end"
+        android:src="@drawable/ic_check_circle_filled"
+        app:tint="@color/ghibli_grass_green"
+        android:visibility="gone"
+        tools:visibility="visible"/>
+
+</FrameLayout>

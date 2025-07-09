@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_ghibli_sky">
+
+    <!-- Background notebook peek -->
+    <View
+        android:id="@+id/nextNotebookPeek"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/notebook_edge"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="-50dp"
+        android:elevation="2dp"/>
+
+    <!-- Main Notebook Container -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/notebookContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="24dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="40dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Spiral binding -->
+            <View
+                android:id="@+id/spiralBinding"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/spiral_binding"
+                android:elevation="4dp"/>
+
+            <!-- ViewPager2 for pages -->
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/notebookViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/spiralBinding"
+                android:background="@color/notebook_paper"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Category Title -->
+    <TextView
+        android:id="@+id/categoryTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Travel Dreams"
+        android:textSize="28sp"
+        android:fontFamily="@font/kalam_bold"
+        android:textColor="@color/ghibli_brown"
+        app:layout_constraintTop_toTopOf="@id/notebookContainer"
+        app:layout_constraintStart_toStartOf="@id/notebookContainer"
+        app:layout_constraintEnd_toEndOf="@id/notebookContainer"
+        android:layout_marginTop="16dp"
+        android:elevation="8dp"/>
+
+    <!-- Add Item FAB -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/ic_add"
+        app:backgroundTint="@color/ghibli_grass_green"
+        app:tint="@color/ghibli_cloud_white"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
